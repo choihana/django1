@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
 
+from photo.fields import ThumbnailImageField
+
 
 # Create your models here.
 class Album(models.Model):
@@ -17,9 +19,6 @@ class Album(models.Model):
     def get_absolute_url(self):
         return reverse('photoo:alnum_detail',args=(self.id,))
 
-
-class ThumbnailImageField(upload_to):
-    pass
 
 
 class Photo(models.Model):
